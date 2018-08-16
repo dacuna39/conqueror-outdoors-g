@@ -13,6 +13,14 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
+       /* <!-- jquery script --> */
+      script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"
+  
+      /* <!-- snipcart scripts --> */
+      script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"
+      script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="MmQwNDIwOTctYjliYy00NzM0LWI3OGEtMDI4NWY3ZjY3NGQ4NjM2Njk5NzAwNTkxNTcxNjIy" id="snipcart"
+      link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css"
+  
     />
     <Header siteTitle={data.site.siteMetadata.title} />
     <div
