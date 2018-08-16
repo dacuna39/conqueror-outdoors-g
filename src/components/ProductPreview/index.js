@@ -74,7 +74,7 @@ function ProductPreview(props) {
 		price = '';
 	}
 
-	if (window.location.href.includes('product')) { //if its on the product page, refresh the page with an a tag (change this later!)
+	//if (window.location.href.includes('product')) { //if its on the product page, refresh the page with an a tag (change this later!)
 		return (
 			<Container onClick={props.clickFunc}>
 
@@ -95,6 +95,7 @@ function ProductPreview(props) {
 			</Container>
 		);
 	}
+	/*
 	else { // if not on product page, go to product page
 		return (
 			<Container>
@@ -116,9 +117,10 @@ function ProductPreview(props) {
 
 				</LinkStyle>
 			</Container>
-		);
+		); 
 	}
 }
+*/
 
 ProductPreview.propTypes = {
 	_id: PropTypes.number.isRequired,

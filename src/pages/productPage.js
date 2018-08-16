@@ -71,6 +71,7 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
 
   constructor(props) {
     super(props);
+
     //window.scrollTo(0, 0);
 
     //console.log('snipcart', Snipcart.api);
@@ -123,8 +124,7 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
         audience: '',
       },
 
-      viewportWidth: 1600,
-      //viewportWidth: window.innerWidth,
+      viewportWidth: 1200,
       relatedProducts: [{ //placeholder product so that the hot products container doesnt shrink due to empty data
         "name": "",
         "image": "",
@@ -177,7 +177,7 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
     this.productId = GetNumberAtEndOfString(id);
     console.log('id', id);
     */
-    this.fetchProduct("200");
+    this.fetchProduct('200');
     //this.updateDimensions();
     //window.addEventListener("resize", this.updateDimensions.bind(this));
   }
@@ -271,9 +271,11 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
       .catch(error => console.error('Error:', error));
   }
 
+  /*
   componentWillUnmount() {
-    //window.removeEventListener("resize", this.updateDimensions.bind(this));
+    window.removeEventListener("resize", this.updateDimensions.bind(this));
   }
+  */
 
   renderDescriptionElements() {
 
