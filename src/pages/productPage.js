@@ -71,7 +71,7 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
 
   constructor(props) {
     super(props);
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
 
     //console.log('snipcart', Snipcart.api);
 
