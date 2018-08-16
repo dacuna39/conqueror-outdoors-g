@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { AddToCart as AddSnipCart} from 'react-snipcart';
+//import 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css';
 
 import H1 from '../components/H1';
 import H2 from '../components/H2';
@@ -167,6 +168,26 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
   }
 
   componentDidMount() {
+
+    const snipcart = document.createElement("script");
+    snipcart.src = 'https://cdn.snipcart.com/scripts/2.0/snipcart.js';
+    snipcart.dataApiKey = 'MmQwNDIwOTctYjliYy00NzM0LWI3OGEtMDI4NWY3ZjY3NGQ4NjM2Njk5NzAwNTkxNTcxNjIy';
+    snipcart.id = "snipcart";
+    snipcart.async = true;
+    document.body.appendChild(snipcart);
+
+    const jQuery = document.createElement("script");
+    jQuery.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js';
+    jQuery.async = true;
+    document.body.appendChild(jQuery);
+
+    const snipcartMin = document.createElement("link");
+    snipcartMin.src = 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css';
+    snipcartMin.rel = 'stylesheet';
+    snipcartMin.type = 'text/css';
+    snipcartMin.async = true;
+    document.body.appendChild(snipcartMin);
+
 
     /*
     var id = window.location.href;
