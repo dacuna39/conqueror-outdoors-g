@@ -123,7 +123,8 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
         audience: '',
       },
 
-      viewportWidth: window.innerWidth,
+      viewportWidth: 1600,
+      //viewportWidth: window.innerWidth,
       relatedProducts: [{ //placeholder product so that the hot products container doesnt shrink due to empty data
         "name": "",
         "image": "",
@@ -167,6 +168,7 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
 
   componentDidMount() {
 
+    /*
     var id = window.location.href;
     if (id.includes('#!/'))
       id = id.substring(0, window.location.href.indexOf('#!/'));
@@ -174,18 +176,18 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
 
     this.productId = GetNumberAtEndOfString(id);
     console.log('id', id);
-    
-    this.fetchProduct(this.productId);
-    this.updateDimensions();
-    window.addEventListener("resize", this.updateDimensions.bind(this));
+    */
+    this.fetchProduct("200");
+    //this.updateDimensions();
+    //window.addEventListener("resize", this.updateDimensions.bind(this));
   }
 
   fetchProduct = (id) => {
 
     this.defaultProductForSale();
 
-    window.scrollTo(0, 0);
-    fetch('https://conqueror-db.herokuapp.com/products/200', {
+    //window.scrollTo(0, 0);
+    fetch('https://conqueror-db.herokuapp.com/products/' + id, {
       method: 'get',
       headers: {
         'Accept': 'application/json',
@@ -270,7 +272,7 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.updateDimensions.bind(this));
+    //window.removeEventListener("resize", this.updateDimensions.bind(this));
   }
 
   renderDescriptionElements() {
@@ -320,7 +322,7 @@ export class ProductPage extends React.Component { // eslint-disable-line react/
     }
   }
 
-  updateDimensions = () => { this.setState({ viewportWidth: window.innerWidth }) }
+  //updateDimensions = () => { this.setState({ viewportWidth: window.innerWidth }) }
   toggleReviewModal = () => { this.setState({ showReviewModal: !this.state.showReviewModal }) }
 
   clickDescription = (e) => {
